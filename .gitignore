@@ -27,6 +27,8 @@ share/python-wheels/
 MANIFEST
 
 # PyInstaller
+#   Usually these files are written by a python script from a template
+#   before PyInstaller builds the exe, so as to inject date/other infos into it.
 *.manifest
 *.spec
 
@@ -81,6 +83,39 @@ target/
 profile_default/
 ipython_config.py
 
+# pyenv
+# .python-version
+
+# pipenv
+# Pipfile.lock
+
+# UV
+# uv.lock
+
+# poetry
+# poetry.lock
+# poetry.toml
+
+# pdm
+# pdm.lock
+# pdm.toml
+.pdm-python
+.pdm-build/
+
+# pixi
+# pixi.lock
+.pixi
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMaker
+*.sage.py
+
 # Environments
 .env
 .envrc
@@ -90,6 +125,16 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
 
 # mypy
 .mypy_cache/
@@ -105,8 +150,26 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+# PyCharm
+# .idea/
+
+# Abstra
+.abstra/
+
+# Visual Studio Code
+# .vscode/
+tempCodeRunnerFile.py
+
 # Ruff stuff:
 .ruff_cache/
+
+# PyPI configuration file
+.pypirc
+
+# Marimo
+marimo/_static/
+marimo/_lsp/
+__marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
@@ -130,9 +193,20 @@ prompt-templates.md
 홈.py를 활용 데이터 목록.pdf
 KOSI 중소기업 동향 정리.pdf
 
-# 기타 불필요 결과물
+# 실행 결과물
+*.png
+report_*.txt
 filter_result.json
 result.json
 shortBreakingNews_result.json
 globalSupplyInsights_result.json
+
+# 불필요 데이터 파일
+test_identity.csv
+test_transaction.csv
+train_identity.csv
+train_transaction.csv
+
+# 기타
 Thumbs.db
+홈.py를 활용 데이터 목록.pdf

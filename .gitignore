@@ -1,0 +1,138 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+*.ipynb
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Environments
+.env
+.envrc
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Ruff stuff:
+.ruff_cache/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# ── 프로젝트 전용 ────────────────────────────────────────
+
+# 테스트 스크립트 (API 키 하드코딩, 앱 구동과 무관)
+filter_test.py
+kotra_news.py
+
+# Claude 프로젝트 메모리 (개인 파일)
+.claude/
+
+# 개발 노트 / 문서 (앱 구동과 무관)
+ObsidianVault/
+prompt-templates.md
+자료조사.html
+자료조사.md
+가설 수립 발표 피드백.txt
+챕터2숙제_업무문서_기획서_Talkly서비스런칭.txt
+홈.py를 활용 데이터 목록.pdf
+KOSI 중소기업 동향 정리.pdf
+
+# 기타 불필요 결과물
+filter_result.json
+result.json
+shortBreakingNews_result.json
+globalSupplyInsights_result.json
+Thumbs.db

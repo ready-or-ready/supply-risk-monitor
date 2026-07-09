@@ -178,21 +178,33 @@ def fetch_usd_krw_monthly(start_ym: str, end_ym: str) -> dict:
 # ══════════════════════════════════════════════════════════
 # yfinance (시장 데이터)
 # ══════════════════════════════════════════════════════════
+_yf_session = requests.Session()
+_yf_session.headers.update({
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    )
+})
+
 @st.cache_data(ttl=86400, show_spinner=False)
 def fetch_market_data(days: int = 30) -> pd.DataFrame:
     """yfinance: Brent / WTI / USDKRW / 대한유화 / KOSPI 일별 종가"""
     frames = {}
     for label, ticker in TICKERS.items():
-        try:
-            df = yf.download(ticker, period=f"{days}d", interval="1d",
-                             progress=False, auto_adjust=True)
-            if df.empty:
-                continue
-            close = df["Close"].squeeze()
-            close.index = close.index.strftime("%Y-%m-%d")
-            frames[label] = close
-        except Exception:
-            pass
+        for attempt in range(3):
+            try:
+                df = yf.download(ticker, period=f"{days}d", interval="1d",
+                                 progress=False, auto_adjust=True,
+                                 session=_yf_session)
+                if not df.empty:
+                    close = df["Close"].squeeze()
+                    close.index = close.index.strftime("%Y-%m-%d")
+                    frames[label] = close
+                break
+            except Exception:
+                if attempt == 2:
+                    pass
     result = pd.DataFrame(frames)
     result.index.name = "날짜"
     return result.dropna(how="all")

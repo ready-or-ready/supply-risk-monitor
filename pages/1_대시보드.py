@@ -167,10 +167,10 @@ st.subheader("📈 가격 추세")
 tab_price, tab_customs = st.tabs(["유가 · 환율", "월별 수입단가"])
 
 with tab_price:
-    brent_s  = df_market["Brent"].dropna()
-    wti_s    = df_market["WTI"].dropna()
-    usdkrw_s = df_market["USDKRW"].dropna()
-    krw_mean = usdkrw_s.mean()
+    brent_s  = df_market["Brent"].dropna()  if "Brent"  in df_market.columns else pd.Series(dtype=float)
+    wti_s    = df_market["WTI"].dropna()    if "WTI"    in df_market.columns else pd.Series(dtype=float)
+    usdkrw_s = df_market["USDKRW"].dropna() if "USDKRW" in df_market.columns else pd.Series(dtype=float)
+    krw_mean = usdkrw_s.mean() if not usdkrw_s.empty else 0.0
 
     # 호버용 한글 날짜
     def kr_hover(d: str) -> str:

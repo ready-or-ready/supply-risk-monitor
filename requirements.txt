@@ -1,6 +1,6 @@
 # ── 데이터 수집 ──────────────────────────────────────────
 # 관세청 GW, 외교부 안전공지, 한국은행 ECOS, 중기부 지원사업 공고 API
-requests>=2.32.5
+requests>=2.34.2
 # 연합뉴스 RSS SSL 우회 어댑터 (LegacyTLSAdapter) — requests 의존성이지만 직접 사용
 urllib3>=2.0.0
 

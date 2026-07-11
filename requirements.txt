@@ -24,4 +24,4 @@ openpyxl>=3.1.0
 
 # ── LLM 분석 ─────────────────────────────────────────────
 # AI 종합 분석 (claude-haiku-4-5) — ANTHROPIC_KEY 미설정 시 하드코딩 fallback
-openai>=1.0.0
+openai>=2.45.0
